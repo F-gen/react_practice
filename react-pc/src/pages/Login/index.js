@@ -3,12 +3,21 @@ import logo from '@/assets/logo.png'
 import './index.scss'
 
 const Login = () => {
+  const onFinish = values => {
+    console.log(values)
+  }
   return (
     <div className="login">
       <Card className="login-container">
         <img className="login-logo" src={logo} alt="" />
         {/* 登录表单 */}
         <Form
+          onFinish={onFinish}
+          initialValues={{
+            mobile: '13911111111',
+            code: '246810',
+            remember: true
+          }}
           validateTrigger={['onBlur', 'onChange']}
         >
           <Form.Item
