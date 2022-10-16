@@ -20,7 +20,7 @@ function App() {
 
           <Route index element={<Home></Home>}></Route>
           <Route index path='Article' element={<Article></Article>}></Route>
-          <Route index path='Punlish' element={<Publish></Publish>}></Route>
+          <Route index path='Publish' element={<Publish></Publish>}></Route>
 
         </Route>
       </Routes>
