@@ -1,4 +1,5 @@
 import { Layout, Menu, Popconfirm } from 'antd'
+import { Outlet, Link } from 'react-router-dom'
 import {
   HomeOutlined,
   DiffOutlined,
@@ -32,17 +33,25 @@ const GeekLayout = () => {
             style={{ height: '100%', borderRight: 0 }}
           >
             <Menu.Item icon={<HomeOutlined />} key="1">
-              数据概览
+              <Link to={'/'}>
+                数据概览
+              </Link>
             </Menu.Item>
             <Menu.Item icon={<DiffOutlined />} key="2">
-              内容管理
+              <Link to={'Publish'} >
+                内容管理
+              </Link>
             </Menu.Item>
             <Menu.Item icon={<EditOutlined />} key="3">
-              发布文章
+              <Link to={'Article'}>
+                发布文章
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout className="layout-content" style={{ padding: 20 }}>内容</Layout>
+        <Layout className="layout-content" style={{ padding: 20 }}>
+          <Outlet></Outlet>
+        </Layout>
       </Layout>
     </Layout>
   )

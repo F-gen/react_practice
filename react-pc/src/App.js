@@ -4,6 +4,9 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Layout from '@/pages/Layout'
 import Login from '@/pages/Login'
 import { AuthRoute } from '@/components/AuthRoute'
+import Publish from './pages/Publish'
+import Article from './pages/Article'
+import Home from './pages/Home'
 function App() {
   return (
     <BrowserRouter>
@@ -13,8 +16,13 @@ function App() {
           <AuthRoute>
             <Layout></Layout>
           </AuthRoute>
+        }>
 
-        }></Route>
+          <Route index element={<Home></Home>}></Route>
+          <Route index path='Article' element={<Article></Article>}></Route>
+          <Route index path='Punlish' element={<Publish></Publish>}></Route>
+
+        </Route>
       </Routes>
     </BrowserRouter>
   );
