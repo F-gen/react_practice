@@ -7,9 +7,11 @@ import { AuthRoute } from '@/components/AuthRoute'
 import Publish from './pages/Publish'
 import Article from './pages/Article'
 import Home from './pages/Home'
+import { HistoryRouter, history } from './utils/history'
 function App() {
   return (
-    <BrowserRouter>
+    <HistoryRouter history={history}>
+
       <Routes>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/' element={
@@ -24,7 +26,8 @@ function App() {
 
         </Route>
       </Routes>
-    </BrowserRouter>
+
+    </HistoryRouter>
   );
 }
 
