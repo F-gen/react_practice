@@ -1,12 +1,21 @@
+import Bar from "@/components/Bar"
 import './index.scss'
-import * as echarts from 'echarts'
-
-function Home() {
+const Home = () => {
   return (
-    <div>Home</div>
-    
-    )
+    <div className="home">
+      <Bar
+        style={{ width: '500px', height: '400px' }}
+        xData={['vue', 'angular', 'react']}
+        sData={[50, 60, 70]}
+        title='三大框架满意度' />
+
+      <Bar
+        style={{ width: '500px', height: '400px' }}
+        xData={['vue', 'angular', 'react']}
+        sData={[50, 60, 70]}
+        title='三大框架使用度' />
+    </div>
+  )
 }
+
 export default Home
-
-
